@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# 在 git commit 之前，针对 git add 的文件进行渐进式重构
+npx lint-staged
