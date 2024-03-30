@@ -1,0 +1,13 @@
+{
+    "serverConfig": {
+        "host": "0.0.0.0",
+        "port": 33001
+    },
+    "dbConfig": {
+        "host": "hostname",
+        "port": 3306,
+        "user": "username",
+        "password": "password",
+        "database": "db_name"
+    }
+}
