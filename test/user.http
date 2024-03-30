@@ -11,3 +11,12 @@ Content-Type: application/json
 {
     "userId": "23209010001"
 }
+
+### 获取用户详细信息
+POST http://127.0.0.1:33001/api/user/getUserSexAge
+Content-Type: application/json
+
+{
+    "sex": "1",
+    "age": "1"
+}

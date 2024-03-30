@@ -9,3 +9,8 @@ exports.getUserInfo = async (userId) => {
     const userInfo = await userDao.getUserInfo(userId);
     return userInfo;
 };
+
+exports.getUserSexAge = async (sex, age) => {
+    const userSexAge = await userDao.getUserSexAge(sex, age);
+    return userSexAge;
+};

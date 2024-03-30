@@ -4,10 +4,10 @@
         "port": 33001
     },
     "dbConfig": {
-        "host": "hostname",
-        "port": 3306,
-        "user": "username",
-        "password": "password",
-        "database": "db_name"
+        "host": "124.220.156.219",
+        "port": 3311,
+        "user": "monikai",
+        "password": "6qWwtMfjHzoAJUYh",
+        "database": "demo"
     }
 }
