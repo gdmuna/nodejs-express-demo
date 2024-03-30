@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "VisualStudioExptTeam.vscodeintellicode", // IntelliCode
+        "GitHub.copilot", // GitHub Copilot
+        "w88975.code-translate", // Code Translate
+        "mhutchie.git-graph", // Git Graph
+        "eamodio.gitlens", // GitLens
+        "oderwat.indent-rainbow", // indent-rainbow
+        "dbaeumer.vscode-eslint", // ESLint
+        "esbenp.prettier-vscode", // Prettier
+        "christian-kohler.npm-intellisense", // npm Intellisense
+        "humao.rest-client" // REST Client
+    ]
+}
