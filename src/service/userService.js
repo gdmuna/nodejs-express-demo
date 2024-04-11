@@ -1,11 +1,12 @@
 const userDao = require('../dao/userDao');
 
-exports.getUserList = async () => {
-    const userList = await userDao.getUserList();
-    return userList;
+exports.getJobList = async () => {
+    const JobList = await userDao.getJobList();
+    return JobList;
 };
 
-exports.getUserInfo = async (userId) => {
-    const userInfo = await userDao.getUserInfo(userId);
-    return userInfo;
-};
+//以下为模版
+// exports.getUserInfo = async (userId) => {
+//     const userInfo = await userDao.getUserInfo(userId);
+//     return userInfo;
+// };

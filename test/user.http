@@ -1,5 +1,5 @@
-### 获取用户列表
-POST http://127.0.0.1:33001/api/user/getUserList
+### 获取职位列表
+POST http://127.0.0.1:33001/api/user/home/getJobList
 Content-Type: application/json
 
 

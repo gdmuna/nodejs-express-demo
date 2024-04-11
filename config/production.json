@@ -4,10 +4,10 @@
         "port": 33001
     },
     "dbConfig": {
-        "host": "hostname",
+        "host": "mariadb-10.db.gdmuna.com",
         "port": 3306,
-        "user": "username",
-        "password": "password",
-        "database": "db_name"
+        "user": "daihuiyuan",
+        "password": "$=3@r^Pc.kO1TaNA",
+        "database": "sideline"
     }
 }
