@@ -1,7 +1,10 @@
 ### 获取职位列表
-POST http://127.0.0.1:33001/api/user/home/getJobList
+POST http://127.0.0.1:33001/api/user/home/getTypeJob
 Content-Type: application/json
 
+{
+    "typeId":"4"
+}
 
 
 ### 获取用户详细信息

@@ -38,3 +38,42 @@ exports.getJobList = async () => {
 //     const sqlParams = [userId];
 //     return await db.query(sql, sqlParams);
 // };
+
+exports.getTypeList = async () => {
+    const sql = `
+        SELECT
+            param_meaning AS paramMeaning,
+            param_id AS paramId
+        FROM
+            system_param_dict
+        WHERE
+            dict_id = 1;
+    `;
+    return await db.query(sql);
+};
+
+exports.getTypeJob = async (typeId) => {
+    const sql = `
+        SELECT
+            p.job_id AS jobId,
+            p.title_job AS titleJob,
+            p.job_description AS jobDescription,
+            p.requirement_label AS requirementLabel,
+            p.requirements_l AS requirementsL,
+            p.salary,
+            p.salary_unit AS salaryUnit,
+            p.location,
+            u.user_avatar AS userAvatar,
+            u.nickname 
+        FROM
+            position_job p
+        INNER JOIN
+            user_basic_table u
+        ON
+            u.user_id=p.recruiters_id
+        WHERE
+            p.type_job = ?
+    `;
+    const sqlParams = [typeId];
+    return await db.query(sql, sqlParams);
+};

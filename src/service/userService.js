@@ -10,3 +10,13 @@ exports.getJobList = async () => {
 //     const userInfo = await userDao.getUserInfo(userId);
 //     return userInfo;
 // };
+
+exports.getTypeList = async () => {
+    const TypeList = await userDao.getTypeList();
+    return TypeList;
+};
+
+exports.getTypeJob = async (typeId) => {
+    const typeJob = await userDao.getTypeJob(typeId);
+    return typeJob;
+};
