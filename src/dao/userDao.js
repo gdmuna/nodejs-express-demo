@@ -77,3 +77,25 @@ exports.getTypeJob = async (typeId) => {
     const sqlParams = [typeId];
     return await db.query(sql, sqlParams);
 };
+
+exports.addCollect = async (userId, jobId) => {
+    const sql = `
+        INSERT INTO
+            favorites_table (user_id,job_id) 
+        VALUES
+            (?, ?)
+    `;
+    const sqlParams = [userId, jobId];
+    await db.query(sql, sqlParams);
+};
+
+exports.addReport = async (userId, jobId) => {
+    const sql = `
+        INSERT INTO
+            report (user_id,job_id) 
+        VALUES
+            (?, ?)
+    `;
+    const sqlParams = [userId, jobId];
+    await db.query(sql, sqlParams);
+};

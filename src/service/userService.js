@@ -20,3 +20,11 @@ exports.getTypeJob = async (typeId) => {
     const typeJob = await userDao.getTypeJob(typeId);
     return typeJob;
 };
+
+exports.addCollect = async (userId, jobId) => {
+    await userDao.addCollect(userId, jobId);
+};
+
+exports.addReport = async (userId, jobId) => {
+    await userDao.addReport(userId, jobId);
+};

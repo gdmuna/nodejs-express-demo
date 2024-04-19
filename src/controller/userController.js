@@ -20,8 +20,18 @@ router.post('/home/getTypeList', async (req, res, next) => {
     const result = await userService.getTypeList();
     res.ResultVO(0, '成功', result);
 });
-
+//获取某个职位类型的所有职位
 router.post('/home/getTypeJob', async (req, res, next) => {
-    const result = await userService.getTypeJob(req.body.typeId);
+    const result = await userService.getTypeJob(req.body.paramId);
     res.ResultVO(0, '成功', result);
+});
+//添加某个用户收藏的职位到收藏表
+router.post('/addCollect', async (req, res, next) => {
+    await userService.addCollect(req.body.userId, req.body.jobId);
+    return res.sendStatus(200);
+});
+//添加举报的职位到举报表
+router.post('/addReport', async (req, res, next) => {
+    await userService.addReport(req.body.userId, req.body.jobId);
+    return res.sendStatus(200);
 });
