@@ -22,9 +22,31 @@ exports.getTypeJob = async (typeId) => {
 };
 
 exports.addCollect = async (userId, jobId) => {
-    await userDao.addCollect(userId, jobId);
+    const collect = await userDao.addCollect(userId, jobId);
+    return collect;
 };
 
 exports.addReport = async (userId, jobId) => {
-    await userDao.addReport(userId, jobId);
+    const report = await userDao.addReport(userId, jobId);
+    return report;
+};
+
+exports.addUser = async (userId, phoneNumber, password, identityParam, nickname) => {
+    const user = await userDao.addUser(userId, phoneNumber, password, identityParam, nickname);
+    return user;
+};
+
+exports.getUserPassword = async (userId) => {
+    const password = await userDao.getUserPassword(userId);
+    return password;
+};
+
+exports.getResume = async (userId) => {
+    const Resume = await userDao.getResume(userId);
+    return Resume;
+};
+
+exports.addSendResume = async (resumeId, userId, recruitersId) => {
+    const sendResume = await userDao.addSendResume(resumeId, userId, recruitersId);
+    return sendResume;
 };
