@@ -86,7 +86,7 @@ exports.addCollect = async (userId, jobId) => {
             (?, ?)
     `;
     const sqlParams = [userId, jobId];
-    await db.query(sql, sqlParams);
+    return await db.query(sql, sqlParams);
 };
 
 exports.addReport = async (userId, jobId) => {
@@ -97,5 +97,60 @@ exports.addReport = async (userId, jobId) => {
             (?, ?)
     `;
     const sqlParams = [userId, jobId];
-    await db.query(sql, sqlParams);
+    return await db.query(sql, sqlParams);
+};
+
+exports.addUser = async (userId, phoneNumber, password, identityParam, nickname) => {
+    const sql = `
+        INSERT INTO
+            user_basic_table (user_id, phone_number, password, identity_param, nickname) 
+        VALUES
+            (?, ?, ?, ?, ?)
+    `;
+    const sqlParams = [userId, phoneNumber, password, identityParam, nickname];
+    return await db.query(sql, sqlParams);
+};
+
+exports.getUserPassword = async (userId) => {
+    const sql = `
+        SELECT
+            password
+        FROM
+            user_basic_table
+        WHERE
+            user_id = ?
+    `;
+    const sqlParams = [userId];
+    return await db.query(sql, sqlParams);
+};
+
+exports.getResume = async (userId) => {
+    const sql = `
+        SELECT
+            resume_id AS resumeId,
+            resume_name AS resumeName,
+            phone,
+            wechat,
+            health_certificate AS healthCertificate,
+            curriculum_vitae AS curriculumVitae,
+            work_experience AS workExperience,
+            honor_certificate AS honorCertificate
+        FROM
+            Resume
+        WHERE
+            user_id = ?
+    `;
+    const sqlParams = [userId];
+    return await db.query(sql, sqlParams);
+};
+
+exports.addSendResume = async (resumeId, userId, recruitersId) => {
+    const sql = `
+        INSERT INTO
+            resume_submission_status (resume_id,user_id,recruiters_id) 
+        VALUES
+            (?, ?, ?)
+    `;
+    const sqlParams = [resumeId, userId, recruitersId];
+    return await db.query(sql, sqlParams);
 };
