@@ -50,3 +50,15 @@ exports.addSendResume = async (resumeId, userId, recruitersId) => {
     const sendResume = await userDao.addSendResume(resumeId, userId, recruitersId);
     return sendResume;
 };
+
+//景清
+//读取用户的简历
+exports.getUserResumes = async (userId) => {
+    const userResumes = await userDao.getUserResumes(userId);
+    return userResumes;
+};
+//读取用户简历的详细信息
+exports.getUserResumesInfo = async (resumeId) => {
+    const userResumesInfo = await userDao.getUserResumesInfo(resumeId);
+    return userResumesInfo;
+};
