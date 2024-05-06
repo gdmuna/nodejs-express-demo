@@ -14,3 +14,19 @@ Content-Type: application/json
 {
     "userId": "345"
 }
+
+### 获取用户简历
+POST http://127.0.0.1:33001/api/user/getUserResumes
+Content-Type: application/json
+
+{
+    "userId": "345"
+}
+
+### 获取用户简历
+POST http://127.0.0.1:33001/api/user/getUserResumesInfo
+Content-Type: application/json
+
+{
+    "resumeId": 2
+}

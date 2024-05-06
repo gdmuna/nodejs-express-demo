@@ -55,3 +55,15 @@ router.post('/addSendResume', async (req, res, next) => {
     const result = await userService.addSendResume(req.body.resumeId, req.body.userId, req.body.recruitersId);
     res.ResultVO(0, '成功', result);
 });
+
+//景清
+//读取用户的简历
+router.post('/getUserResumes', async (req, res, next) => {
+    const result = await userService.getUserResumes(req.body.userId);
+    res.ResultVO(0, '成功', result);
+});
+//读取用户简历的详细信息
+router.post('/getUserResumesInfo', async (req, res, next) => {
+    const result = await userService.getUserResumesInfo(req.body.resumeId);
+    res.ResultVO(0, '成功', result);
+});
