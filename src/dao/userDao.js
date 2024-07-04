@@ -17,12 +17,27 @@ exports.getUserInfo = async (userId) => {
             user_id AS userId,
             user_name AS userName,
             gender,
-            age
         FROM
             user_info
         WHERE
-            user_id = ?
+            gender = ?
     `;
     const sqlParams = [userId];
+    return await db.query(sql, sqlParams);
+};
+
+exports.getSex = async (sex) => {
+    const sql = `
+        SELECT
+            user_id AS userId,
+            user_name AS userName,
+            gender
+            
+        FROM
+            user_info
+        WHERE
+            gender = ?
+    `;
+    const sqlParams = [sex];
     return await db.query(sql, sqlParams);
 };
