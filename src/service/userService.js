@@ -5,9 +5,9 @@ exports.getUserList = async () => {
     return userList;
 };
 
-exports.getUserInfo = async (userId) => {
-    const userInfo = await userDao.getUserInfo(userId);
-    return userInfo;
+exports.addqrContent = async (upurl, qrName, userId, codeUrl) => {
+    const qrContent = await userDao.addqrContent(upurl, qrName, userId, codeUrl);
+    return qrContent;
 };
 
 exports.getSex = async (sex) => {

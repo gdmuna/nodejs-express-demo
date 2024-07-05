@@ -11,18 +11,14 @@ exports.getUserList = async () => {
     return await db.query(sql);
 };
 
-exports.getUserInfo = async (userId) => {
+exports.addqrContent = async (upurl, qrName, userId, codeUrl) => {
     const sql = `
-        SELECT
-            user_id AS userId,
-            user_name AS userName,
-            gender,
-        FROM
-            user_info
-        WHERE
-            gender = ?
+        INSERT INTO 
+            qr_code_table (QR_content_code_url, QR_code_name, user_id, QR_code_url) 
+        VALUES 
+            (?, ?, ?, ?);
     `;
-    const sqlParams = [userId];
+    const sqlParams = [upurl, qrName, userId, codeUrl];
     return await db.query(sql, sqlParams);
 };
 

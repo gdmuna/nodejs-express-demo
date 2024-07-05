@@ -4,13 +4,16 @@ Content-Type: application/json
 
 
 
-#
+###
 
-POST http://127.0.0.1:33001/api/user/getUserInfo
+POST http://127.0.0.1:33660/api/user/addqrContent
 Content-Type: application/json
 
 {
-    "userId": "23209010001"
+    "upurl":123124,
+    "qrName":11,
+    "userId":22,
+    "codeUrl":12341
 }
 
 ###
