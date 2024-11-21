@@ -4,11 +4,25 @@ const db_conf = require('config').get('dbConfig');
 const mariadb = require('mariadb');
 const pool = new mariadb.createPool(db_conf);
 
+// SQL 组装器 - 仅用于预览 SQL 语句
+const generateSql = (sql, params) => {
+    let finalSQL = sql;
+    let index = 0;
+
+    // 替换 SQL 查询语句中的参数占位符（例如 ?）为实际的参数值
+    finalSQL = finalSQL.replace(/\?/g, () => {
+        return typeof params[index] === 'string' ? "'" + params[index++] + "'" : params[index++];
+    });
+
+    return finalSQL;
+};
+
 // 封装数据库查询的方法
 exports.query = async (sql, sqlParams) => {
     let conn;
     try {
         conn = await pool.getConnection();
+        console.log('Executing SQL query:', generateSql(sql, sqlParams));
         return await conn.query(sql, sqlParams);
     } catch (err) {
         return err;
