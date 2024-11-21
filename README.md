@@ -2,54 +2,72 @@
 
 一个基于 Node.js Express 框架构建的后端服务 Demo 。
 
-## 快速开始
+## 技术栈
 
-### 1. 前置准备——安装 Node.js 开发环境
+-   框架
+    -   Express.js
+-   代码规范
+    -   [ESLint](https://eslint.org/)
+    -   [Prettier](https://prettier.io/)
+-   数据库
+    -   [SQLite](https://www.sqlite.org/index.html)
+    -   [MySQL](https://www.mysql.com/)
+    -   [MariaDB](https://mariadb.org/)
 
-> 如果在 Windows 系统进行开发，推荐使用 nvm，nvm 是 node.js 的版本管理工具，可以让你电脑同时存在多个不同版本的 node.js 环境。
->
-> 安装包下载地址：[nvm-windows](https://github.com/coreybutler/nvm-windows/releases)
+## 项目结构
 
-1.1 安装 nvm  
- 打开页面之后下载最新版本的 `nvm-setup.exe` ，然后运行安装程序。
+    ```plaintext
+    .
+    ├── .husky              # Git 钩子
+    ├── .vscode             # VSCode 配置与扩展
+    ├── config              # 项目配置文件
+    ├── node_modules        # 项目依赖
+    ├── src                 # 源码
+    │   ├── controller      # 控制层
+    │   ├── dao             # 数据访问层
+    │   ├── middleware      # 中间件
+    │   ├── service         # 业务逻辑层
+    │   └── utils           # 工具函数
+    ├── test                # 模拟发包测试
+    ├── .eslintrc.cjs       # ESLint 配置
+    ├── .gitattributes      # Git 格式化提交配置
+    ├── .gitignore          # Git 代码跟踪忽略规则
+    ├── .npmrc              # NPM 镜像源配置
+    ├── .prettierrc.cjs     # Prettier 配置
+    ├── .yarnrc             # Yarn 镜像源配置
+    ├── app.js              # 项目入口文件
+    ├── db-sqlite.db        # SQLite 数据库文件（仅当数据库选择使用 SQLite 才会出现）
+    ├── Dockerfile          # Docker 镜像构建文件
+    ├── LICENSE             # 开源协议
+    ├── package.json        # 项目信息
+    ├── README.md           # 项目说明
+    ```
 
-1.2 配置 node 和 nvm 的 镜像源  
-nvm 安装完成后，在安装目录下找到 `settings.txt` 添加以下内容：
+## 如何运行项目
 
-```txt settings.txt
-node_mirror: https://npmmirror.com/mirrors/node/
-npm_mirror: https://npmmirror.com/mirrors/npm/
-```
+1. 前置条件
 
-1.3 使用 nvm 下载一个 node.js 环境  
-打开 Command Prompt (cmd) 或 Windows Terminal，执行如下命令：
+    - Node.js 20 LTS 及以上版本
+    - Yarn
 
-```shell
-nvm install 18.18.2
-```
+2. 安装依赖
 
-1.4 切换到这个下载好的 node.js 环境
+    ```bash
+    yarn install
+    ```
 
-```shell
-nvm use 18.18.2
-```
+3. 启动项目
 
-### 2. 启动项目
+    ```bash
+    yarn dev
+    ```
 
-2.1 拉取项目使用的依赖
+4. 调试项目
 
-```shell
-npm install
-```
+    按键盘快捷键 <kbd>F5</kbd> 启动调试，在该模式下可以对程序进行单步调试。
 
-2.2 把项目跑起来（调试项目）  
-按键盘快捷键 <kbd>F5</kbd> 启动调试，在该模式下可以对程序进行单步调试。
+5. 在生产环境启动项目
 
-2.3 如有必要，可以尝试正式启动这个项目
-
-```shell
-# 以开发模式启动
-npm run dev
-# 以生产模式启动
-npm run start
-```
+    ```shell
+    yarn start
+    ```
