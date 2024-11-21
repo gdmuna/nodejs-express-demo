@@ -1,7 +1,7 @@
 {
     "name": "nodejs-express-demo",
-    "version": "0.0.0",
-    "description": "一个基于 Node.js Express 框架构建的后端服务 Demo 。",
+    "version": "0.1.0",
+    "description": "一个基于 Node.js Express 框架构建的后端服务 Demo",
     "keywords": [
         "express",
         "framework",
@@ -19,6 +19,14 @@
         "email": "seeleclover@outlook.com",
         "url": "https://github.com/seeleclover"
     },
+    "homepage": "https://github.com/gdmuna/nodejs-express-demo",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gdmuna/nodejs-express-demo.git"
+    },
+    "engines": {
+        "node": "^20.0.0 || ^22.0.0"
+    },
     "main": "app.js",
     "scripts": {
         "dev": "cross-env NODE_ENV=development node ./app.js",
@@ -30,8 +38,11 @@
         "lint:lint-staged": "lint-staged"
     },
     "lint-staged": {
-        "*.{js,cjs,mjs,jsx,ts,tsx,html,vue}": [
+        "*.{js,cjs,mjs,jsx,ts,tsx,vue}": [
             "eslint --fix",
+            "prettier --write"
+        ],
+        "*.html": [
             "prettier --write"
         ],
         "*.{css,scss,less,styl}": [
@@ -44,13 +55,13 @@
             "prettier --write"
         ]
     },
-    "homepage": "https://github.com/gdmuna/nodejs-express-demo",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/gdmuna/nodejs-express-demo.git"
-    },
-    "engines": {
-        "node": "^18.0.0 || ^20.0.0"
+    "dependencies": {
+        "config": "^3.3.11",
+        "cors": "^2.8.5",
+        "cross-env": "^7.0.3",
+        "express": "^4.19.2",
+        "mariadb": "^3.3.0",
+        "better-sqlite3": "^11.5.0"
     },
     "devDependencies": {
         "eslint": "^8.57.0",
@@ -59,12 +70,5 @@
         "husky": "^9.0.11",
         "lint-staged": "^15.2.2",
         "prettier": "3.2.5"
-    },
-    "dependencies": {
-        "config": "^3.3.11",
-        "cors": "^2.8.5",
-        "cross-env": "^7.0.3",
-        "express": "^4.19.2",
-        "mariadb": "^3.3.0"
     }
 }

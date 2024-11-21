@@ -15,9 +15,7 @@ exports.getUserInfo = async (userId) => {
     const sql = `
         SELECT
             user_id AS userId,
-            user_name AS userName,
-            gender,
-            age
+            user_name AS userName
         FROM
             user_info
         WHERE

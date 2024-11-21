@@ -1,7 +1,8 @@
 {
     "serverConfig": {
         "host": "0.0.0.0",
-        "port": 33001
+        "port": 33001,
+        "baseUrl": "/api"
     },
     "dbConfig": {
         "provider": "sqlite",

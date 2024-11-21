@@ -3,12 +3,13 @@ module.exports = router;
 
 const userService = require('../service/userService');
 
-router.post('/getUserList', async (req, res, next) => {
+router.get('/getUserList', async (req, res, next) => {
     const result = await userService.getUserList();
     res.ResultVO(0, '成功', result);
 });
 
-router.post('/getUserInfo', async (req, res, next) => {
-    const result = await userService.getUserInfo(req.body.userId);
+router.get('/getUserInfo', async (req, res, next) => {
+    const { userId } = req.query;
+    const result = await userService.getUserInfo(userId);
     res.ResultVO(0, '成功', result);
 });
