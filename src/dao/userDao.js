@@ -1,4 +1,4 @@
-const db = require('../utils/dbConnPool/mariadb');
+const db = require(`../utils/dbConnPool/db`);
 
 exports.getUserList = async () => {
     const sql = `

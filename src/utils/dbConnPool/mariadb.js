@@ -17,7 +17,7 @@ const generateSql = (sql, params) => {
     return finalSQL;
 };
 
-// 封装数据库查询的方法
+// 封装 SQL 执行的方法
 exports.query = async (sql, sqlParams) => {
     let conn;
     try {
