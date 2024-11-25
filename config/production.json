@@ -12,5 +12,9 @@
         "username": "username",
         "password": "password",
         "schema": ""
+    },
+    "jwtConfig": {
+        "secret": "jwt_key",
+        "expiresIn": "12h"
     }
 }
