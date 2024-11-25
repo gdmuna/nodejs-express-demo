@@ -12,10 +12,12 @@ app.use(
 );
 // 将请求体解析为 JSON
 app.use(express.json());
-// 错误处理
-app.use(require('./src/middleware/errorHandler'));
 // 响应格式化
 app.use(require('./src/middleware/responseFormat'));
+// API 鉴权
+app.use(require('./src/middleware/apiProtected'));
+// 错误处理
+app.use(require('./src/middleware/errorHandler'));
 
 // 导入服务器配置
 const server_conf = require('config').get('serverConfig');
