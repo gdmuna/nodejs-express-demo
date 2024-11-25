@@ -43,30 +43,44 @@
     ├── README.md           # 项目说明
     ```
 
+## 数据库表结构
+
+```sql
+CREATE TABLE "user_info" (
+    "user_id" TEXT NOT NULL,
+    "user_name" TEXT NOT NULL,
+    "password_hash" TEXT,
+    PRIMARY KEY ("user_id")
+);
+```
+
 ## 如何运行项目
 
 1. 前置条件
 
     - Node.js 20 LTS 及以上版本
-    - Yarn
+    - NPM / Yarn / PNPM
+    - SQLite / MySQL / MariaDB
 
-2. 安装依赖
+2. 自行创建相关的数据库表
+
+3. 安装依赖
 
     ```bash
     yarn install
     ```
 
-3. 启动项目
+4. 启动项目
 
     ```bash
     yarn dev
     ```
 
-4. 调试项目
+5. 调试项目
 
     按键盘快捷键 <kbd>F5</kbd> 启动调试，在该模式下可以对程序进行单步调试。
 
-5. 在生产环境启动项目
+6. 在生产环境启动项目
 
     ```shell
     yarn start
