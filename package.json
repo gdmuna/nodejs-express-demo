@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "description": "一个基于 Node.js Express 框架构建的后端服务 Demo",
     "keywords": [
-        "express",
+        "expressjs",
         "framework",
         "web",
         "http",
