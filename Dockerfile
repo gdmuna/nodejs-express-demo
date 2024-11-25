@@ -1,5 +1,5 @@
 # 设定打包成 Docker 镜像时的 Node.js 版本
-ARG VERSION="18.18.2"
+ARG VERSION="20"
 
 FROM node:${VERSION}-alpine
 EXPOSE 33001
