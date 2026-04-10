@@ -1,0 +1,26 @@
+{
+    "editor.fontFamily": "Cascadia Mono, 等线",
+    "editor.fontSize": 18,
+    "editor.inlineSuggest.enabled": true,
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "files.autoSave": "afterDelay",
+    "files.eol": "\n",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "terminal.integrated.fontFamily": "Cascadia Mono, 等线",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": false,
+        "remotes": false,
+        "stashes": false,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "repositories": true,
+        "searchAndCompare": true,
+        "launchpad": true
+    }
+}
