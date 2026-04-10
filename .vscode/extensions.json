@@ -1,7 +1,6 @@
 {
     "recommendations": [
-        "VisualStudioExptTeam.vscodeintellicode", // IntelliCode
-        "GitHub.copilot", // GitHub Copilot
+        "GitHub.copilot-chat", // GitHub Copilot Chat
         "w88975.code-translate", // Code Translate
         "mhutchie.git-graph", // Git Graph
         "eamodio.gitlens", // GitLens
